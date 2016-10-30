@@ -1,0 +1,47 @@
+Java Reference Stuff
+-----------------------------------------------
+ 
+// JavaDocs: https://docs.oracle.com/javase/7/docs/api/
+ 
+// A method example. If we were to call this we'd have to provide a number parameter and it would return nothing.
+public     | void        | test        | (int a)
+Visibility | Return Type | Method Name | Parameters
+ 
+// !! Remember that class constructor methods don't have a return type specified!
+// !! public className() { }
+ 
+Variable Declaration: // Just declaring a variable
+    // Remember in declaration, just as in method naming, the variable can be named literally anything.
+    // Also remember that if we were to try to use one of these variables-
+    // -without assigning it a value it WILL return null. (Except for booleans which default false)
+    int a;
+    String hello;
+    boolean toBe;
+    Object object;
+ 
+Variable Assignment: // Just assigning a variable a value.
+    a = 1234;
+    hello = "Hello, world!";
+    toBe = false;
+    object = new Object();
+ 
+Declaration AND Assignment: // Declaring and assigning immediately.
+    int a = 1234;
+    String hello = "Hello, world!";
+    boolean toBe = false;
+    Object object = new Object();
+ 
+Operators: // Operators generally used in condition checks (if/else statements)
+    // Relational
+        == // Value is equal to.
+        != // Value is NOT equal to.
+        <= // Value is LESS than or equal to.
+        >= // Value is GREATER than or equal to.
+        >  // Value is GREATER than.
+        <  // Value is LESS than.
+    // Logical
+        !  // Not.
+        && // Conditional AND.
+        || // Conditional OR.
+        &  // and.
+        |  // orur.
