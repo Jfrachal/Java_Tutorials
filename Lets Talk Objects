@@ -1,0 +1,76 @@
+Lets Talk Objects: // Don't over think this!
+ 
+ /*!! Before we go anywhere we should talk about the term Object because Objects are key. Don't over think this because we are literally
+    just talking about things like your desk, tv, or bike. Consider this, all of these objects have /state/ and /behaviours/. Take for
+    example the bike. The bike has the states like current gear, current pedal cadence (number of revolutions of the crank per minute), current speed. It also has behaviours like changing gear, changing pedal candence, and applying breaks.
+ 
+    These are conceptually similar to software objects as software objects too consist of state and related behaviour. Software objects
+    store their state in /fields/ (in this case you will know these as variables see example below) and expose their behaviours through
+    methods (again, example below.) Just for the sake of simplicity we'll make one more example.
+ 
+    Take for instance a lamp it has the states on and off (can be looked at as a boolean value). It also has the behaviours turn on and turn off which can be looked at as two methods, we could make it one but we're being simplistic here, turnOff() and turnOn() */
+   
+    public class Bike {
+ 
+        // These are considered fields or as you know them variables. These fields are global to the class.
+        private int currentGear;
+        private double pedalRate;
+        private int currentSpeed;
+ 
+        public Bike() { // Just initializing these fields in the constructor so that these wont be null
+            currentGear = 5;
+            pedalRate = 2.0D; // bare with me, I realize this is an unrealistic number for rpm
+            currentSpeed = 4;
+        }
+ 
+        // These are our behaviours in the form of methods.
+ 
+        public void increaseGear() { // A method for increasing the gear rating this would be a behaviour like stated above.
+            if (currentGear >= 9) { // Hardcap to 8. If the gear count is greater than or equal to 9 we reset it to 1.
+                currentGear = 1;
+            } else {
+                currentGear++; // incrementing the value of currentGear by 1.
+            }
+        }
+ 
+        public void updatePedalRate(double rate) { // returns nothing and takes a double value to update the pedal rate with.
+            if (rate > -1.0) { // if the rate is a positive number then we update our value to reflect the input.
+                pedalRate = rate;
+            } else {
+                System.out.println("PedalRate needs to be a positive number!");
+            }
+        }
+ 
+        public void setSpeed(int speed) { // Returns nothing and take a int for the current speed.
+            if (speed > -1) { // If the speed is 0 or greater then we update speed to reflect the input.
+                currentSpeed = speed;
+            } else {
+                System.out.println("currentSpeed needs to be a positive number!");
+            }  
+        }
+ 
+    }  
+ 
+    public class Lamp {
+ 
+        // our *global* fields or states
+        private boolean on; // booleans are default false if they're not assigned to anything instead of being null
+ 
+        public Lamp() {
+            on = false; // Here we're making it so when we make a new lamp object ('new Lamp();') it'll be default off.
+        }
+ 
+        // our methods or behaviours
+ 
+        public void turnOn() { // turns the lamp on and returns nothing.
+            on = true;
+        }
+ 
+        public void turnOff() { // turns the lamp off and returns nothing.
+            on = false;
+        }
+ 
+        public void toggle() { // toggles the lamp to on or off depending on it's current state returns nothing.
+            on = !on;
+        }
+    }
