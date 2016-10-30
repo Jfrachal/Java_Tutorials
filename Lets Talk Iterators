@@ -1,0 +1,42 @@
+/* Let's talk about the iterator object. What is an iterator? well, an iterator is a object that enables you to
+traverse a container. Iterators are often tightly coupled with the container it's traversing. Consider this, a collection or list is just a container. 
+Something that you're always going to want to be able to do with a container is have a way to put things in and take things out. For this we'll look at the 
+collection object ArrayList. In ArrayList there is the method add() for adding new objects to your container and there is the method get() to get things out of 
+the list based on the given index assuming an element exists for the given index.
+ 
+Now consider this, an Iterator object, again, is simply an object whose job it is to traverse a given sequence of objects or container.
+The Iterator object doesn't just traverse the sequence but also selects each object it finds while traversing without you knowing
+or caring about the structure of the sequence. Often times with Iterators there are constraints like only being able to traverse in one direction 
+through the given sequence. The Iterator object we're working with is an Iterator with these kinds of constraints. There isn't a whole lot that can 
+be done with one save for getting a Iterator instance from a container, getting the next object in the sequence, seeing if there are more objects 
+in the sequence, and removing the last returned object.
+*/
+ 
+public class Example{
+ 
+    private ArrayList<String> strings;
+ 
+    public Example() {
+        strings = new ArrayList<String>();
+        strings.add("1");
+        strings.add("2");
+        strings.add("3");
+    }
+ 
+    public void printListWithIterator() {
+        Iterator<String> it = strings.iterator; // we have defined that this iterator is going to be iterating through objects of the type String.
+        // What makes iterators unique from just using for loops and looping here is we don't need to care about how big the list is. It's handled for us.
+        while(it.hasNext()) {
+            System.out.println(it.next()); // here we print the string objects because it.next() returns us a String, specifically a string from our list.
+        }
+    }
+ 
+    public void printListGenericallyWithIterator() {
+        Iterator it = string.iterator; // we have not defined what object types are being iterated through so they will simply be 'Objects'.
+        while(it.hasNext()) {
+            Object object = it.next(); // literally a generic Object type because we've not defined the type of objects we're looking at in the iterator.
+            System.out.println(object);
+        }
+    }
+ 
+}
