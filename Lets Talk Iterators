@@ -24,7 +24,7 @@ public class Example{
     }
  
     public void printListWithIterator() {
-        Iterator<String> it = strings.iterator; // we have defined that this iterator is going to be iterating through objects of the type String.
+        Iterator<String> it = strings.iterator(); // we have defined that this iterator is going to be iterating through objects of the type String.
         // What makes iterators unique from just using for loops and looping here is we don't need to care about how big the list is. It's handled for us.
         while(it.hasNext()) {
             System.out.println(it.next()); // here we print the string objects because it.next() returns us a String, specifically a string from our list.
@@ -32,7 +32,7 @@ public class Example{
     }
  
     public void printListGenericallyWithIterator() {
-        Iterator it = string.iterator; // we have not defined what object types are being iterated through so they will simply be 'Objects'.
+        Iterator it = strings.iterator; // we have not defined what object types are being iterated through so they will simply be 'Objects'.
         while(it.hasNext()) {
             Object object = it.next(); // literally a generic Object type because we've not defined the type of objects we're looking at in the iterator.
             System.out.println(object);
